@@ -17,6 +17,7 @@ const News: CollectionConfig = {
         { label: 'Intelekt', value: 'Intelekt' },
         { label: 'Opensvit', value: 'Opensvit' },
         { label: 'Opticom', value: 'Opticom' },
+        { label: 'Veles', value: 'Veles'},
       ],
     },
     { 
@@ -55,12 +56,8 @@ const News: CollectionConfig = {
     },
     { 
       name: 'content',
-      type: 'richText',
-      defaultValue: [
-        {
-          children: [{ text: '' }],
-        },
-      ],
+      type: 'textarea',
+      
     }
   ],
   access: {

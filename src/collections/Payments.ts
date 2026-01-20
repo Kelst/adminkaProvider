@@ -1,11 +1,16 @@
+// collections/Payments.ts
 import { CollectionConfig } from 'payload/types';
+import { getPaymentsByProvider } from '../endpoints/getPaymentsByProvider';
 
 const Payments: CollectionConfig = {
-  slug: 'payments',
+  slug: 'payments-admin',
   admin: {
     useAsTitle: 'name',
     description: 'Налаштування платіжних систем для провайдерів',
   },
+  endpoints: [
+    getPaymentsByProvider
+  ],
   fields: [
     {
       name: 'provider',
@@ -15,6 +20,7 @@ const Payments: CollectionConfig = {
         { label: 'Intelekt', value: 'Intelekt' },
         { label: 'Opensvit', value: 'Opensvit' },
         { label: 'Opticom', value: 'Opticom' },
+        { label: 'Veles', value: 'Veles' },
       ],
     },
     {
@@ -41,7 +47,19 @@ const Payments: CollectionConfig = {
     }
   ],
   access: {
-    read: () => true,
+    read: ({ req: { user } }) => {
+      if (!user) return false;
+      return user.role === 'admin' || user.role === 'editor';
+    },
+    update: ({ req: { user } }) => {
+      return user?.role === 'admin';
+    },
+    create: ({ req: { user } }) => {
+      return user?.role === 'admin';
+    },
+    delete: ({ req: { user } }) => {
+      return user?.role === 'admin';
+    },
   },
 };
 

@@ -15,6 +15,7 @@ const FAQ: CollectionConfig = {
         { label: 'Intelekt', value: 'Intelekt' },
         { label: 'Opensvit', value: 'Opensvit' },
         { label: 'Opticom', value: 'Opticom' },
+        { label: 'Veles', value: 'Veles' },
       ],
     },
     {
@@ -35,6 +36,15 @@ const FAQ: CollectionConfig = {
   ],
   access: {
     read: () => true,
+    create: ({ req: { user } }) => {
+      return user?.role === 'guest' || user?.role === 'admin';
+    },
+    update: ({ req: { user } }) => {
+      return user?.role === 'guest' || user?.role === 'admin';
+    },
+    delete: ({ req: { user } }) => {
+      return user?.role === 'guest' || user?.role === 'admin';
+    },
   },
 };
 
