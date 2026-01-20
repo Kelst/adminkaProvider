@@ -59,6 +59,8 @@ const TaskFromUser: CollectionConfig = {
         { label: 'Intelekt', value: 'Intelekt' },
         { label: 'Opensvit', value: 'Opensvit' },
         { label: 'Opticom', value: 'Opticom' },
+        { label: 'Veles', value: 'Veles' },
+        { label: 'Mtknet', value: 'Mtknet' },
       ],
     },
     {

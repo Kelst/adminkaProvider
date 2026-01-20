@@ -53,6 +53,8 @@ const Feedback: CollectionConfig = {
         { label: 'Intelekt', value: 'intelekt' },
         { label: 'Opensvit', value: 'opensvit' },
         { label: 'Opticom', value: 'opticom' },
+        { label: 'Veles', value: 'veles' },
+        { label: 'Mtknet', value: 'mtknet' },
       ],
      
     },

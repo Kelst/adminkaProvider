@@ -16,6 +16,7 @@ const PageConfig: CollectionConfig = {
         { label: 'Opensvit', value: 'Opensvit' },
         { label: 'Opticom', value: 'Opticom' },
         { label: 'Veles', value: 'Veles' },
+        { label: 'Mtknet', value: 'Mtknet' },
       ],
     },
     {
